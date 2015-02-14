@@ -10,6 +10,9 @@
 #import "ZLSwipeableView.h"
 #import "UIColor+FlatColors.h"
 #import "CardView.h"
+#import "job.h"
+#import "StoreMatches.h"
+#import "ApiLink.h"
 
 @interface ViewController () <ZLSwipeableViewDataSource,
                               ZLSwipeableViewDelegate, UIActionSheetDelegate>
@@ -25,6 +28,14 @@
 @implementation ViewController {
     UIButton *right;
     UIButton *left;
+    NSString *theJob;
+    NSString *country;
+    NSInteger winner;
+    NSDictionary *openings;
+    StoreMatches *methods;
+    UILabel *countryLabel;
+    UILabel *exploreCorps;
+    
 }
 
 - (void)viewDidLoad {
@@ -54,10 +65,15 @@
         @"Asbestos"
     ];
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.016 green:0.309 blue: .427 alpha:1];
+    
+   
+    
     [self setupButtons];
 
     // Optional Delegate
     self.swipeableView.delegate = self;
+    self.swipeableView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -66,17 +82,31 @@
 }
 
 -(void)setupButtons {
-    right = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 95, self.view.frame.size.height - 95, 84, 84)];
+    right = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 145, self.view.frame.size.height - 145, 84, 84)];
     //cancelSettings.backgroundColor = [UIColor clearColor];
     [right setImage:[UIImage imageNamed:@"check_circle.png"] forState:UIControlStateNormal];
     [self.view addSubview:right];
     [right addTarget:self action:@selector(swipeRightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    left = [[UIButton alloc]initWithFrame:CGRectMake(11, self.view.frame.size.height - 95, 84, 84)];
+    left = [[UIButton alloc]initWithFrame:CGRectMake(61, self.view.frame.size.height - 145, 84, 84)];
     //cancelSettings.backgroundColor = [UIColor clearColor];
     [left setImage:[UIImage imageNamed:@"x_circle.png"] forState:UIControlStateNormal];
     [self.view addSubview:left];
     [left addTarget:self action:@selector(swipeLeftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    countryLabel = [[UILabel alloc]initWithFrame:CGRectMake(2, 85, self.view.frame.size.width-1, self.view.frame.size.height-1)];
+    countryLabel.text = @"initial country label";
+    //[ZLSwipeableView addSubview:countryLabel];
+    //[left addTarget:self action:@selector(swipeLeftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    exploreCorps = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 - 80, 25, 160, 40)];
+    exploreCorps.text = @"Explore Corps";
+    //exploreCorps.backgroundColor = [UIColor redColor];
+    exploreCorps.textColor = [UIColor whiteColor];
+    [exploreCorps setFont:[UIFont fontWithName:@"Helvetica" size:25]];
+    [self.view addSubview:exploreCorps];
+    //[left addTarget:self action:@selector(swipeLeftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 #pragma mark - Action
@@ -156,7 +186,7 @@
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
     if (self.colorIndex < self.colors.count) {
         CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
-        view.backgroundColor = [UIColor orangeColor];
+        view.backgroundColor = [UIColor colorWithRed:.886 green: .871 blue: .776 alpha:1];
         self.colorIndex++;
 
         if (self.loadCardFromXib) {
@@ -187,16 +217,66 @@
                                                          metrics:metrics
                                                            views:views]];
         } else {
+            /* job title */
             UITextView *textView =
-                [[UITextView alloc] initWithFrame:view.bounds];
-            textView.text = @"This UITextView was created programmatically.";
+                [[UITextView alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width-75, self.view.frame.size.height/7)];
+            /* country name */
+            UITextView *textView2 =
+            [[UITextView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/4, self.view.frame.size.width-75, self.view.frame.size.height/8)];
+            
+            
+            ApiLink *test = [[ApiLink alloc] init];
+            NSDictionary *dict = [[NSDictionary alloc] init];
+            NSArray *results = [[NSArray alloc] init];
+            openings = [[NSDictionary alloc] init];
+            methods = [[StoreMatches alloc] init];
+            dict = test.getJobOpenings;
+            results = [dict valueForKey:@"results"];
+            
+            //get these results
+            int openingCount = (int)[results count];
+            NSLog(@"%i", openingCount);
+                
+            openings = results[winner];
+                
+            Job *newJob = [methods storeOpening:openings];
+                
+            theJob = newJob.jobTitle;
+            country = [newJob.jobCountry capitalizedString];
+            
+            //ApiLink *getPic = [[ApiLink alloc] init];
+         //   NSDictionary *countryInfo = [getPic getCountryInfo:newJob.jobCountry];
+          //  NSString *url = [countryInfo valueForKey:@"banner_image"];
+            
+            // hello baigil... cell.image = [UIImage imageWithData: data];
+            // consider the above statemnt ... xD thankyou! cheers bro! !    !
+            
+            //mapImage = [[UIImage alloc]initWithData:banner];
+            //add image to thing
+            
+         /*   UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:banner]];
+            imgView.frame = CGRectOffset(imgView.frame, 100, 100);
+            [self.view addSubview:imgView];
+            //}*/
+            
+            textView.text = theJob;
             textView.backgroundColor = [UIColor clearColor];
             textView.font = [UIFont systemFontOfSize:24];
             textView.editable = NO;
             textView.selectable = NO;
+            textView.textAlignment = NSTextAlignmentCenter;
             [view addSubview:textView];
+            
+            textView2.text = country;
+            textView2.backgroundColor = [UIColor clearColor];
+            textView2.font = [UIFont systemFontOfSize:24];
+            textView2.editable = NO;
+            textView2.selectable = NO;
+            textView2.textAlignment = NSTextAlignmentCenter;
+            [view addSubview:textView2];
+            
         }
-
+        winner++;
         return view;
     }
     return nil;

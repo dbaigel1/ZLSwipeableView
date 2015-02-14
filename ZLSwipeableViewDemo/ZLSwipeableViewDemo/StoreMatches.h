@@ -8,6 +8,7 @@
 
 #ifndef ExploreCorps_StoreMatches_h
 #define ExploreCorps_StoreMatches_h
+#import "job.h"
 
 @interface StoreMatches : NSObject
 

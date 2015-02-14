@@ -19,7 +19,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, 0, 300, 400)];
     if (self) {
         [self setup];
     }

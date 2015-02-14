@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "job.h"
 
-@implementation Job
+@implementation Job : NSObject
 
 - (void)setTitle:(NSString *)title
 {

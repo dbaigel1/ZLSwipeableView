@@ -15,7 +15,7 @@
 - (Job *)storeOpening:(NSDictionary *)opening
 {
     Job *jobListing = [[Job alloc] init];
-    [jobListing setTitle:[opening valueForKey:@"country"]];
+    [jobListing setTitle:[opening valueForKey:@"title"]];
     [jobListing setLocations:[opening valueForKey:@"country"]
                   withRegion:[opening valueForKey:@"region"]
                   withSector:[opening valueForKey:@"sector"]];

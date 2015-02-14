@@ -51,7 +51,7 @@
 
 - (NSDictionary*)getCountryInfo:(NSString *)country {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *url = [NSString stringWithFormat:@"http://www.peacecorps.gov/api/v1/geography/%@", country];
+    NSString *url = [NSString stringWithFormat:@"http://www.peacecorps.gov/api/v1/geography/countries/?country=%@", country];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"GET"];
@@ -84,7 +84,7 @@
 
 - (NSDictionary*)getRegionInfo:(NSString *)region {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *url = [NSString stringWithFormat:@"http://www.peacecorps.gov/api/v1/geography/%@", region];
+    NSString *url = [NSString stringWithFormat:@"http://www.peacecorps.gov/api/v1/geography/regions/region=%@", region];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"GET"];

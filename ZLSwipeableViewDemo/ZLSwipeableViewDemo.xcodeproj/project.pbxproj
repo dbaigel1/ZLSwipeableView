@@ -19,7 +19,6 @@
 		092F0F661A05C9CA007CDDCC /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F0F651A05C9CA007CDDCC /* UIColor+FlatColors.m */; };
 		092F0F691A05DAF9007CDDCC /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F0F681A05DAF8007CDDCC /* CardView.m */; };
 		0971D4611A08425E00325B8D /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0971D45F1A08425E00325B8D /* ZLSwipeableView.m */; };
-		8D9A99C91A8F49D20060A3E2 /* job.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A99C81A8F49D20060A3E2 /* job.m */; };
 		9095C2EA4770EBE51DAED3FD /* libPods-ZLSwipeableViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB4F08B7A20BF4D4A853C67 /* libPods-ZLSwipeableViewDemo.a */; };
 		F23F549D1A8F4A7300660E6F /* ApiLink.m in Sources */ = {isa = PBXBuildFile; fileRef = F23F549C1A8F4A7300660E6F /* ApiLink.m */; };
 		F23F54A21A8F4AB500660E6F /* job.m in Sources */ = {isa = PBXBuildFile; fileRef = F23F549F1A8F4AB500660E6F /* job.m */; };
@@ -60,8 +59,6 @@
 		0971D45E1A08425E00325B8D /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableView.h; sourceTree = "<group>"; };
 		0971D45F1A08425E00325B8D /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableView.m; sourceTree = "<group>"; };
 		5BB4F08B7A20BF4D4A853C67 /* libPods-ZLSwipeableViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZLSwipeableViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D9A99C71A8F49D20060A3E2 /* job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = job.h; sourceTree = "<group>"; };
-		8D9A99C81A8F49D20060A3E2 /* job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = job.m; sourceTree = "<group>"; };
 		92CBCEB513B28DDC7C91E3CB /* Pods-ZLSwipeableViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewDemo/Pods-ZLSwipeableViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B104F48F3D486B65DEE5AB9A /* Pods-ZLSwipeableViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewDemo/Pods-ZLSwipeableViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F23F549B1A8F4A7300660E6F /* ApiLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiLink.h; sourceTree = "<group>"; };
@@ -124,8 +121,6 @@
 				092F0F681A05DAF8007CDDCC /* CardView.m */,
 				0923646A1A59D90F009BC8B4 /* CardContentView.xib */,
 				092F0F3B1A05B474007CDDCC /* Main.storyboard */,
-				8D9A99C71A8F49D20060A3E2 /* job.h */,
-				8D9A99C81A8F49D20060A3E2 /* job.m */,
 				092F0F3E1A05B474007CDDCC /* Images.xcassets */,
 				092F0F401A05B474007CDDCC /* LaunchScreen.xib */,
 				092F0F311A05B474007CDDCC /* Supporting Files */,
@@ -343,7 +338,6 @@
 				092F0F3A1A05B474007CDDCC /* ViewController.m in Sources */,
 				092F0F661A05C9CA007CDDCC /* UIColor+FlatColors.m in Sources */,
 				092F0F371A05B474007CDDCC /* AppDelegate.m in Sources */,
-				8D9A99C91A8F49D20060A3E2 /* job.m in Sources */,
 				0901414B1A37FF7900435455 /* ZLPanGestureRecognizer.m in Sources */,
 				F23F549D1A8F4A7300660E6F /* ApiLink.m in Sources */,
 				092F0F341A05B474007CDDCC /* main.m in Sources */,
