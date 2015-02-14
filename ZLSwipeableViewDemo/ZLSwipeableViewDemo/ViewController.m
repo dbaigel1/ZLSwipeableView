@@ -135,7 +135,7 @@
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
     if (self.colorIndex < self.colors.count) {
         CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
-        view.backgroundColor = [self colorForName:self.colors[self.colorIndex]];
+        view.backgroundColor = [UIColor greenColor];
         self.colorIndex++;
 
         if (self.loadCardFromXib) {
@@ -182,7 +182,7 @@
 }
 
 #pragma mark - ()
-
+/*
 - (UIColor *)colorForName:(NSString *)name {
     NSString *sanitizedName =
         [name stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -190,6 +190,6 @@
         [NSString stringWithFormat:@"flat%@Color", sanitizedName];
     Class colorClass = [UIColor class];
     return [colorClass performSelector:NSSelectorFromString(selectorString)];
-}
+}*/
 
 @end

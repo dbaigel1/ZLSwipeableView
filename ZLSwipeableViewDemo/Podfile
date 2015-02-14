@@ -1,0 +1,12 @@
+# Uncomment this line to define a global platform for your project
+ platform :ios, '8.0'
+
+target 'ZLSwipeableViewDemo' do
+pod 'ZLSwipeableView'
+
+end
+
+target 'ZLSwipeableViewDemoTests' do
+
+end
+

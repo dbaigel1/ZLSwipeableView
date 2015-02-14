@@ -19,6 +19,7 @@
 		092F0F661A05C9CA007CDDCC /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F0F651A05C9CA007CDDCC /* UIColor+FlatColors.m */; };
 		092F0F691A05DAF9007CDDCC /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092F0F681A05DAF8007CDDCC /* CardView.m */; };
 		0971D4611A08425E00325B8D /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0971D45F1A08425E00325B8D /* ZLSwipeableView.m */; };
+		9095C2EA4770EBE51DAED3FD /* libPods-ZLSwipeableViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB4F08B7A20BF4D4A853C67 /* libPods-ZLSwipeableViewDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		092F0F681A05DAF8007CDDCC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		0971D45E1A08425E00325B8D /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableView.h; sourceTree = "<group>"; };
 		0971D45F1A08425E00325B8D /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableView.m; sourceTree = "<group>"; };
+		5BB4F08B7A20BF4D4A853C67 /* libPods-ZLSwipeableViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZLSwipeableViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92CBCEB513B28DDC7C91E3CB /* Pods-ZLSwipeableViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewDemo/Pods-ZLSwipeableViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B104F48F3D486B65DEE5AB9A /* Pods-ZLSwipeableViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewDemo/Pods-ZLSwipeableViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9095C2EA4770EBE51DAED3FD /* libPods-ZLSwipeableViewDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 				092F0F301A05B474007CDDCC /* ZLSwipeableViewDemo */,
 				092F0F4A1A05B474007CDDCC /* ZLSwipeableViewDemoTests */,
 				092F0F2F1A05B474007CDDCC /* Products */,
+				8D56408FD8F679739652199E /* Pods */,
+				995BBFC9790E4C113D621F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +166,23 @@
 			path = ../../ZLSwipeableView;
 			sourceTree = "<group>";
 		};
+		8D56408FD8F679739652199E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92CBCEB513B28DDC7C91E3CB /* Pods-ZLSwipeableViewDemo.debug.xcconfig */,
+				B104F48F3D486B65DEE5AB9A /* Pods-ZLSwipeableViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		995BBFC9790E4C113D621F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BB4F08B7A20BF4D4A853C67 /* libPods-ZLSwipeableViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 092F0F511A05B474007CDDCC /* Build configuration list for PBXNativeTarget "ZLSwipeableViewDemo" */;
 			buildPhases = (
+				501311E1EC3CEA0C87E876C7 /* Check Pods Manifest.lock */,
 				092F0F2A1A05B474007CDDCC /* Sources */,
 				092F0F2B1A05B474007CDDCC /* Frameworks */,
 				092F0F2C1A05B474007CDDCC /* Resources */,
+				C0D750565E6BC9EEC71B5F34 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +280,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		501311E1EC3CEA0C87E876C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0D750565E6BC9EEC71B5F34 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZLSwipeableViewDemo/Pods-ZLSwipeableViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		092F0F2A1A05B474007CDDCC /* Sources */ = {
@@ -386,10 +445,11 @@
 		};
 		092F0F521A05B474007CDDCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92CBCEB513B28DDC7C91E3CB /* Pods-ZLSwipeableViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLSwipeableViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,10 +458,11 @@
 		};
 		092F0F531A05B474007CDDCC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B104F48F3D486B65DEE5AB9A /* Pods-ZLSwipeableViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLSwipeableViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
