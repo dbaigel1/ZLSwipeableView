@@ -24,11 +24,11 @@
     NSError* error = nil;
     openings = [NSJSONSerialization JSONObjectWithData:requestHandler options:NSJSONReadingMutableContainers error:&error];
     
-    NSArray *keys = openings.allKeys;
+    //NSArray *keys = openings.allKeys;
     //NSArray *values = openings.allValues;
     //NSInteger count = openings.count;
     
-    NSLog(@"%@",keys[0]);
+    //NSLog(@"%@",keys[0]);
     
     return openings;
 }

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Foundation/Foundation.h"
+#import "ApiLink.h"
+#import "StoreMatches.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ApiLink *test = [[ApiLink alloc] init];
+    NSDictionary *dict = [[NSDictionary alloc] init];
+    NSDictionary *results = [[NSDictionary alloc] init];
+    dict = test.getJobOpenings;
+    results = [dict valueForKey:@"results"];
+    
+    //get these results
+    NSArray *openings = [results allValues];
+    int openingCount = (int)[results count];
+    for (int i = 0; i < openingCount; i++) {
+        storeOpening(openings[i]);
+    }
+    
+
     return YES;
 }
 
