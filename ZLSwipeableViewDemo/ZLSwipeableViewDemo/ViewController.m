@@ -22,7 +22,10 @@
 @property (nonatomic) BOOL loadCardFromXib;
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    UIButton *right;
+    UIButton *left;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +53,8 @@
         @"Concrete",
         @"Asbestos"
     ];
+    
+    [self setupButtons];
 
     // Optional Delegate
     self.swipeableView.delegate = self;
@@ -60,12 +65,28 @@
     self.swipeableView.dataSource = self;
 }
 
+-(void)setupButtons {
+    right = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 95, self.view.frame.size.height - 95, 84, 84)];
+    //cancelSettings.backgroundColor = [UIColor clearColor];
+    [right setImage:[UIImage imageNamed:@"check_circle.png"] forState:UIControlStateNormal];
+    [self.view addSubview:right];
+    [right addTarget:self action:@selector(swipeRightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    left = [[UIButton alloc]initWithFrame:CGRectMake(11, self.view.frame.size.height - 95, 84, 84)];
+    //cancelSettings.backgroundColor = [UIColor clearColor];
+    [left setImage:[UIImage imageNamed:@"x_circle.png"] forState:UIControlStateNormal];
+    [self.view addSubview:left];
+    [left addTarget:self action:@selector(swipeLeftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
 #pragma mark - Action
 
+/* USER SWIPED LEFT CODE */
 - (IBAction)swipeLeftButtonAction:(UIButton *)sender {
     [self.swipeableView swipeTopViewToLeft];
 }
 
+/* USER SWIPED RIGHT CODE */
 - (IBAction)swipeRightButtonAction:(UIButton *)sender {
     [self.swipeableView swipeTopViewToRight];
 }
@@ -135,7 +156,7 @@
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
     if (self.colorIndex < self.colors.count) {
         CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
-        view.backgroundColor = [UIColor greenColor];
+        view.backgroundColor = [UIColor orangeColor];
         self.colorIndex++;
 
         if (self.loadCardFromXib) {

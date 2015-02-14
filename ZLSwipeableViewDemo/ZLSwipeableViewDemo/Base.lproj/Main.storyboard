@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ra-DQ-XpK" userLabel="SwipeLeft">
-                                <rect key="frame" x="16" y="542" width="30" height="30"/>
-                                <state key="normal" title="Left">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="swipeLeftButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fTo-GI-U9z"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-tF-qFC" userLabel="Reload">
                                 <rect key="frame" x="276" y="542" width="49" height="30"/>
                                 <state key="normal" title="Reload">
@@ -34,15 +24,6 @@
                                 </state>
                                 <connections>
                                     <action selector="reloadButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jL8-oe-0KE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QQ-o9-2eD" userLabel="SwipeRight">
-                                <rect key="frame" x="547" y="542" width="37" height="30"/>
-                                <state key="normal" title="Right">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="swipeRightButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tZK-sW-KTp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNs-Ar-kBM">
@@ -78,12 +59,7 @@
                             <constraint firstAttribute="centerX" secondItem="Yaq-Is-jHi" secondAttribute="centerX" id="G8v-eE-RZz"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Yaq-Is-jHi" secondAttribute="bottom" id="MFv-ha-1or"/>
                             <constraint firstItem="C0K-0Y-C7k" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="MSB-Id-IaW"/>
-                            <constraint firstItem="4ra-DQ-XpK" firstAttribute="baseline" secondItem="4QQ-o9-2eD" secondAttribute="baseline" id="NL7-vB-Qh5"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4ra-DQ-XpK" secondAttribute="bottom" constant="28" id="OeB-yk-jIh"/>
-                            <constraint firstItem="4QQ-o9-2eD" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Pfx-Lv-sPH"/>
                             <constraint firstItem="YNs-Ar-kBM" firstAttribute="top" secondItem="C0K-0Y-C7k" secondAttribute="bottom" constant="8" id="Vvd-oO-3fN"/>
-                            <constraint firstItem="4ra-DQ-XpK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Z0D-uF-dbg"/>
-                            <constraint firstItem="4ra-DQ-XpK" firstAttribute="baseline" secondItem="a3E-tF-qFC" secondAttribute="baseline" id="c4W-xR-7lY"/>
                             <constraint firstItem="C0K-0Y-C7k" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="d1r-l7-bUd"/>
                         </constraints>
                     </view>
