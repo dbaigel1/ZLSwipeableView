@@ -9,5 +9,10 @@
 #ifndef ExploreCorps_StoreMatches_h
 #define ExploreCorps_StoreMatches_h
 
+@interface StoreMatches : NSObject
+
+- (Job *)storeOpening:(NSDictionary *)opening;
+
+@end
 
 #endif

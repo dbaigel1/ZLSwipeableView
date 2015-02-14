@@ -11,7 +11,7 @@
 #ifndef ExploreCorps_job_h
 #define ExploreCorps_job_h
 
-@interface Job: NSObject;
+@interface Job : NSObject;
 
 - (void)setTitle:(NSString *)title;
 - (void)setLocations:(NSString *)country withRegion:(NSString *)region withSector:(NSString *)sector;
@@ -23,7 +23,6 @@
 - (void)setDesiredSkills:(NSString *)desiredSkills;
 - (void)setLanguageSkills:(NSString *)languageSkills;
 - (void)setPositionsAvail:(NSString *)positionsAvail;
-- (void)setAcceptsCouples:(BOOL)acceptsCouples;
 - (void)setLivingConditions:(NSString *)livingConditions;
 - (void)setMedicalConsiderations:(NSString *)medicalConsiderations;
 - (void)setURL:(NSString *)URL;
@@ -43,7 +42,6 @@
 @property (nonatomic, strong)NSString* jobLivingConditions;
 @property (nonatomic, strong)NSString* jobMedicalConsiderations;
 @property (nonatomic, strong)NSString* jobURL;
-
 
 @end
 
